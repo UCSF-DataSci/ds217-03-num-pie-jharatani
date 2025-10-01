@@ -69,6 +69,7 @@ You must complete these tasks using command-line tools and save output to files 
 # Output format: Single number (e.g., "8543")
 # Save to: output/part1_high_bp_count.txt
 ```
+awk -F',' 'NR>1 {sum+=$3; count++} END {print "Average grade:", sum/count}' students.csv
 
 **Task 1.3: Average Temperature**
 
