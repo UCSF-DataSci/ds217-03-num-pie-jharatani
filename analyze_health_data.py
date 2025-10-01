@@ -112,7 +112,7 @@ def save_report(report, filename):
     # ensure parent directory exists
     import os
     os.makedirs(os.path.dirname(filename), exist_ok=True)
-    with open(filename, 'w', encoding='utf-8') as f:
+    with open(filename, 'w') as f:
         f.write(report)
 
 
@@ -127,9 +127,9 @@ def main():
 
     report = generate_report(stats, abnormal, total_readings)
 
-    out_file = 'output/analysis_report.txt'
-    save_report(report, out_file)
-    print(f'Analysis complete. Report saved to {out_file}')
+    
+    save_report(report, 'output/analysis_report.txt')
+    print("Analysis report saved to output/analysis_report.txt")
 
 
 if __name__ == "__main__":
